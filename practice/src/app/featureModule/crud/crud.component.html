@@ -1,0 +1,41 @@
+
+
+<div class="home">
+    <div class="button">
+        <button routerLink="/adduser">Adduser</button>
+    </div>
+    <div class="tablediv">
+        <table class="table">
+            <tr>
+                <th>
+                    
+                </th>
+                <th>
+                    <input [(ngModel)]="name" type="search">
+                </th>
+                <th>
+                    <input [(ngModel)]="company" type="search">
+                </th>
+                <th>
+                    <input [(ngModel)]="designation" type="search">
+                </th>
+
+            </tr>
+            <tr *ngFor="let user of userData | search:'name':name|search:'company':company|search:'designation':designation">
+                <td>
+                    {{user.id}}
+                </td>
+                <td>
+                    {{user.name}}
+                </td>
+                <td>
+                    {{user.company.name}}
+                </td>
+                <td>
+                    {{user.company.designation}}
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>

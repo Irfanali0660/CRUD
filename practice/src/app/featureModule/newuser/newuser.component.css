@@ -1,0 +1,52 @@
+.adduser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px
+}
+
+.container label{
+    margin-top: 10px;
+}
+.container input{
+    padding: 10px;
+    border-radius: 5px;
+    border-style: double;
+    border-color: rgb(206, 206, 206);
+}
+.container input:focus{
+    border:solid 2px rgb(157, 214, 255);
+    outline: none;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+}
+
+.container1 button{
+    margin-top: 20px;
+    padding-inline: 30px;
+    padding-block: 10px;
+    cursor: pointer;
+    background-color: rgb(196, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

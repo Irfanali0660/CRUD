@@ -1,0 +1,31 @@
+<div class="adduser">
+    <form [formGroup]="Myform" (ngSubmit)="submit()">
+        <div class="container">
+            <h2>ADD USER</h2>
+            <label for=""><b>Name</b></label>
+            <input type="text" formControlName="name" placeholder="Enter your name">
+            <div *ngIf="Myform.get('name')?.invalid && Myform.get('name')?.touched || Myform.get('name')?.dirty" style="color: red;">
+                <p *ngIf="Myform.get('name')?.errors?.['required']">Name is required</p>
+                <p *ngIf="Myform.get('name')?.errors?.['minlength']">Mininum length is 3</p>
+                <p *ngIf="Myform.get('name')?.errors?.['maxlength']">maximum length is 6</p>
+            </div>
+    
+            <label for=""><b>Email</b></label>
+            <input type="email" placeholder="Enter your Email" formControlName="email">
+            <div *ngIf="Myform.get('email')?.invalid && Myform.get('email')?.touched || Myform.get('email')?.dirty"  style="color: red;">
+                <p *ngIf="Myform.get('email')?.errors?.['required']">Email is required</p>
+                <p *ngIf="Myform.get('email')?.errors?.['email']">Enter correct email</p>
+            </div>  
+    
+            <label for=""><b>Phonenumber</b></label>
+            <input type="number" placeholder="Enter your Phonenumber" formControlName="phonenumber">
+            <div *ngIf="Myform.get('phonenumber')?.invalid && (Myform.get('phonenumber')?.touched || Myform.get('phonenumber')?.dirty)"  style="color: red;">
+                <p *ngIf="Myform.get('phonenumber')?.errors?.['required']">Phonenumber is required</p>
+                <p *ngIf="Myform.get('phonenumber')?.errors?.['pattern']">Enter the correct phonenumber</p>
+            </div>
+        </div>
+        <div class="container1">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>

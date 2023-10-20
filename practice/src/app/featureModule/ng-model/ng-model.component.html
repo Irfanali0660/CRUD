@@ -1,0 +1,41 @@
+<div class="adduser">
+  <form #myForm="ngForm" (ngSubmit)="submit()">
+    <div class="container">
+      <h2>ADD USER</h2>
+      <label for="name"><b>Name</b></label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" placeholder="Enter your Email" required />
+      <div *ngIf="myForm.submitted && userForm.controls['name'].invalid" class="error-message">
+         <p *ngIf="userForm.controls['name'].errors?.['required']">
+            name is required.
+          </p>
+        </div>
+
+
+      <label for=""><b>Email</b></label>
+      <input type="email" [(ngModel)]="user.email" name="email" [ngModelOptions]="{ standalone: true }" placeholder="Enter your Email" required />
+
+      <div *ngIf="myForm.submitted && userForm.controls['email'].invalid" class="error-message">
+        <p *ngIf="userForm.controls['email'].errors?.['required']">
+          Email is required.
+        </p>
+        <p *ngIf="userForm.controls['email'].errors?.['email']">
+          Please enter a valid email address.
+        </p>
+      </div>
+
+
+
+      <label for=""><b>Phonenumber</b></label>
+      <input type="number" [(ngModel)]="user.phonenumber" name="phonenumber" [ngModelOptions]="{ standalone: true }" placeholder="Enter your Phonenumber" required />
+      <div *ngIf="myForm.submitted && userForm.controls['phonenumber'].invalid" class="error-message">
+        <p *ngIf="userForm.controls['phonenumber'].errors?.['required']">
+            Phonenumber is required.
+          </p>
+      </div>
+    </div>
+    
+    <div class="container1">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
